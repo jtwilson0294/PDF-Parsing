@@ -28,7 +28,8 @@ def extract_text_from_pdf(pdf_path):
     fake_file_handle = io.StringIO()
     converter = TextConverter(resource_manager, fake_file_handle)
     page_interpreter = PDFPageInterpreter(resource_manager, converter)
-
+    
+    #Utilizing PDF miner module to read each page of the current PDF
     with open(pdf_path, 'rb') as fh:
         for page in PDFPage.get_pages(fh,
                                       caching=True,
@@ -53,6 +54,8 @@ if __name__ == '__main__':
 
         DATA_DICT[PDF_NAME_LIST[i]
                   ] = extract_text_from_pdf(PATH + PDF_LIST[i])
+        
+        #Progress output in terminal
         print(i+1, " | ", total, " | ", PDF_NAME_LIST[i])
 
     OUTPUT.write(json.dumps(DATA_DICT))
