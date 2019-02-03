@@ -10,7 +10,7 @@ from pdfminer.pdfpage import PDFPage
 PDF_NAME_LIST = []
 PDF_LIST = []
 DATA_DICT = {}
-PATH = "C:/Users/Tom/Google Drive/LUCOP/Blockchain Research/Blockchain Company Index/White Papers/"
+PATH = "your/path/here/"
 OUTPUT = open("testing.txt", "w")
 
 # Gather all PDFs into a list
