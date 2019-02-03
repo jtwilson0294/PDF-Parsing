@@ -4,7 +4,7 @@ import io
 import os
 import ast
 
-PATH = "C:/Users/Tom/Google Drive/LUCOP/Blockchain Research/Blockchain Company Index/"
+PATH = "your/path/here"
 
 operating_dict = json.load(open(PATH + "PDF_Dict.txt"))
 
