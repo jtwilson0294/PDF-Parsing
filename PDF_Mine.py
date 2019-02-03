@@ -11,7 +11,7 @@ PDF_NAME_LIST = []
 PDF_LIST = []
 DATA_DICT = {}
 PATH = "your/path/here/"
-OUTPUT = open("testing.txt", "w")
+OUTPUT = open("PDF_Dict.txt", "w")
 
 # Gather all PDFs into a list
 for file in os.listdir(PATH):
@@ -54,11 +54,6 @@ if __name__ == '__main__':
         DATA_DICT[PDF_NAME_LIST[i]
                   ] = extract_text_from_pdf(PATH + PDF_LIST[i])
         print(i+1, " | ", total, " | ", PDF_NAME_LIST[i])
-
-    # for key, value in DATA_DICT:
-    #    key.strip("'")
-    #    key = '"' + key + '"'
-    #    value.strip()
 
     OUTPUT.write(json.dumps(DATA_DICT))
     print("Completed")
